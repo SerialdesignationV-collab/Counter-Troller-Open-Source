@@ -1,0 +1,45 @@
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Create a tool
+local tool = Instance.new("Tool")
+tool.Name = "Troll"
+tool.RequiresHandle = false
+tool.Parent = player.Backpack
+
+-- Script for the tool
+tool.Equipped:Connect(function()
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Simon Says Counter", "All")
+end)
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Create a tool
+local tool = Instance.new("Tool")
+tool.Name = "Dad"
+tool.RequiresHandle = false
+tool.Parent = player.Backpack
+
+-- Script for the tool
+tool.Equipped:Connect(function()
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Daddy Says Counter", "All")
+end)
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Create a tool
+local tool = Instance.new("Tool")
+tool.Name = "Mom"
+tool.RequiresHandle = false
+tool.Parent = player.Backpack
+
+-- Script for the tool
+tool.Equipped:Connect(function()
+    -- Say "Mommy Says Counter"
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Mommy Says Counter", "All")
+    wait(1) -- Wait 1 second before saying the next line
+    -- Say "Good Boy"
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Good Boy", "All")
+end)
